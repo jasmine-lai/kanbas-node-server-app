@@ -23,7 +23,7 @@ function CourseRoutes(app) {
     const { id } = req.params;
     Database.courses = Database.courses
       .filter((c) => c._id !== id);
-    res.sendStatus(204);
+    res.send(course);
   });
   app.post("/api/courses", (req, res) => {
     const course = { ...req.body,
